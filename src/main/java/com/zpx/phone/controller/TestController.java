@@ -40,4 +40,11 @@ public class TestController {
         result.setCode(200);result.setMessage("success");result.setData(new Tenant());
         return result;
     }
+
+    @GetMapping("/product/pictureConfig/list")
+    public Result test5() {
+        Result result = new Result();
+        result.setCode(200);result.setMessage("success");result.setData(new PictureConfig());
+        return result;
+    }
 }
