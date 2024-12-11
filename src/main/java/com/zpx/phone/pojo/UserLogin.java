@@ -10,6 +10,6 @@ public class UserLogin {
     private String grant_type;
     private String client_id;
     private String client_secret;
-    private String clientKey;
+    private String client_key;
 
 }
