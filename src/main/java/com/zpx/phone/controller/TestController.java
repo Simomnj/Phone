@@ -31,4 +31,13 @@ public class TestController {
         result.setCode(200);result.setMessage("success");result.setData(new RabbitMQ());
         return result;
     }
+
+    @PostMapping("/user/tenant/page")
+    public Result test4(int current, int size) {
+        System.out.println(current);
+        System.out.println(size);
+        Result result = new Result();
+        result.setCode(200);result.setMessage("success");result.setData(new Tenant());
+        return result;
+    }
 }
