@@ -16,7 +16,6 @@ public class FileController {
     @GetMapping("/mysql")
     public Result<UserLogin> mysql(Integer id) {
         UserLogin userLogin = justService.getUserInfo(id);
-
         return Result.success(userLogin);
     }
 }
