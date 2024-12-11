@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TestController {
+public class LoginController {
 
     @PostMapping("/user/oauth/token")
     public Result test(UserLogin user) {
