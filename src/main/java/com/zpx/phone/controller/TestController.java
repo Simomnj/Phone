@@ -1,9 +1,6 @@
 package com.zpx.phone.controller;
 
-import com.zpx.phone.pojo.Result;
-import com.zpx.phone.pojo.Token;
-import com.zpx.phone.pojo.UserInfo;
-import com.zpx.phone.pojo.UserLogin;
+import com.zpx.phone.pojo.*;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +22,13 @@ public class TestController {
     public Result test2() {
         Result result = new Result();
         result.setCode(200);result.setMessage("success");result.setData(new UserInfo());
+        return result;
+    }
+
+    @GetMapping("/user/mq/info")
+    public Result test3() {
+        Result result = new Result();
+        result.setCode(200);result.setMessage("success");result.setData(new RabbitMQ());
         return result;
     }
 }

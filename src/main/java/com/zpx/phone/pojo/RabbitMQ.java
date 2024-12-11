@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class RabbitMQ {
-    private String host = "192.168.1.53";
+    private String host = "127.0.0.1";
     private int port = 32330;
     private String username = "mq_admi_10187";
     private String password = "factory_29640";
