@@ -4,5 +4,5 @@ import com.zpx.phone.pojo.UserLogin;
 
 public interface JustService {
 
-    public UserLogin getUserInfo(Integer id);
+    public Object getUserInfo(Integer id);
 }

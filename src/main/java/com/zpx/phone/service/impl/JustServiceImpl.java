@@ -14,7 +14,8 @@ public class JustServiceImpl implements JustService {
     private JustMapper justMapper;
 
     @Override
-    public UserLogin getUserInfo(Integer id) {
-        return justMapper.getUserById(id);
+    public Object getUserInfo(Integer id) {
+        Object o = justMapper.getUserById(id);
+        return o;
     }
 }

@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Select;
 public interface JustMapper {
 
     @Select("select * from user where id = #{id}")
-    public UserLogin getUserById(Integer id);
+    public Object getUserById(Integer id);
 }
