@@ -7,6 +7,9 @@ import com.zpx.phone.service.JustService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class JustServiceImpl implements JustService {
 
@@ -14,8 +17,8 @@ public class JustServiceImpl implements JustService {
     private JustMapper justMapper;
 
     @Override
-    public Object getUserInfo(Integer id) {
-        Object o = justMapper.getUserById(id);
-        return o;
+    public List<Map<String, Object>> getUserInfo(Integer id) {
+        List<Map<String, Object>> user = justMapper.getUserById(id);
+        return user;
     }
 }

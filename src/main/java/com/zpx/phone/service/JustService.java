@@ -2,7 +2,10 @@ package com.zpx.phone.service;
 
 import com.zpx.phone.pojo.UserLogin;
 
+import java.util.List;
+import java.util.Map;
+
 public interface JustService {
 
-    public Object getUserInfo(Integer id);
+    public List<Map<String, Object>> getUserInfo(Integer id);
 }

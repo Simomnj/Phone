@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+
 @RestController
 public class FileController {
 
@@ -15,7 +18,7 @@ public class FileController {
 
     @GetMapping("/mysql")
     public Result<Object> mysql(Integer id) {
-        Object userLogin = justService.getUserInfo(id);
+        List<Map<String, Object>> userLogin = justService.getUserInfo(id);
         return Result.success(userLogin);
     }
 }
