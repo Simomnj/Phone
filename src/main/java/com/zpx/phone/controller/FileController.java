@@ -19,6 +19,10 @@ public class FileController {
     @GetMapping("/mysql")
     public Result<Object> mysql(Integer id) {
         List<Map<String, Object>> userLogin = justService.getUserInfo(id);
+        //判断是否为空
+        if(id == null||userLogin==null|| userLogin.isEmpty()) {
+            return Result.failure("id不存在！");
+        }
         return Result.success(userLogin);
     }
 }
