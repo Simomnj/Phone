@@ -12,15 +12,15 @@ import com.zpx.phone.pojo.RabbitMQMessqge;
 import java.io.DataInput;
 
 public class SendRabbitMQUtil {
-    private final static String QUEUE_NAME = "set.of.pictures.state.queue10002";
+    private final static String QUEUE_NAME = "zpx.queue";
 
     public static void main(String[] argv) throws Exception {
         // 创建一个连接工厂
         ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("42.193.217.100"); // 设置RabbitMQ服务器地址
+        factory.setHost("154.17.235.47"); // 设置RabbitMQ服务器地址
         factory.setPort(5672); // 默认的AMQP端口
-        factory.setUsername("mq_1ARD_10002"); // 用户名
-        factory.setPassword("factory_40897"); // 密码
+        factory.setUsername("zpx"); // 用户名
+        factory.setPassword("137141"); // 密码
 
                 // 创建一个连接工厂
 //        ConnectionFactory factory = new ConnectionFactory();
@@ -35,13 +35,10 @@ public class SendRabbitMQUtil {
             // 获取队列中的单个消息
             GetResponse response = channel.basicGet(QUEUE_NAME, true);
             //美化输出开启
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
             if (response != null) {
                 String message = new String(response.getBody(), "UTF-8");
-                // 格式化输出
-                System.out.println(objectMapper.writeValueAsString(objectMapper.readTree(message)));
+                System.out.println(message);
             } else {
                 System.out.println("No messages in the queue.");
             }
