@@ -21,7 +21,7 @@ public class ReadFileUtil {
             e.printStackTrace();
         }
     }
-
+    //通过文件路径读取文件内容并返回
     public String getFilePath(String fileName) {
         try {
             // 读取JSON文件并转换为String

@@ -12,7 +12,7 @@ public class SendRabbitMQController {
 
     @GetMapping("/send")
     public String send() {
-        sendRabbitMQUtil.sendMessage("Test message");
+        //sendRabbitMQUtil.sendMessage("Test message");
         return "消息已发送！";
     }
 }

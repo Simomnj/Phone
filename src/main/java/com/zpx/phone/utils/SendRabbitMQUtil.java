@@ -8,9 +8,10 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.GetResponse;
 import com.zpx.phone.pojo.RabbitMQMessqge;
+import org.springframework.stereotype.Service;
 
 import java.io.DataInput;
-
+@Service
 public class SendRabbitMQUtil {
     private final static String QUEUE_NAME = "zpx.queue";
 
