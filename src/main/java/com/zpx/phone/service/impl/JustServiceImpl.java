@@ -21,4 +21,15 @@ public class JustServiceImpl implements JustService {
         List<Map<String, Object>> user = justMapper.getUserById(id);
         return user;
     }
+
+    @Override
+    public void readToMQ(String className) {
+
+        //通过className配置需要扫描的文件夹路径，获取所有文件名称
+
+        //通过文件名称，获取所有json数据List
+
+        //遍历JsonList，发送到消息队列
+
+    }
 }

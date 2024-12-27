@@ -25,4 +25,9 @@ public class FileController {
         }
         return Result.success(userLogin);
     }
+    @GetMapping("/readToMQ")
+    public Result<Object> readToMQ(String className) {
+        justService.readToMQ(className);
+        return Result.success();
+    }
 }

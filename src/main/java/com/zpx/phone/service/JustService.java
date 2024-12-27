@@ -8,4 +8,6 @@ import java.util.Map;
 public interface JustService {
 
     public List<Map<String, Object>> getUserInfo(Integer id);
+
+    void readToMQ(String className);
 }
