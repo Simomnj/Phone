@@ -30,12 +30,21 @@ public class JustServiceImpl implements JustService {
         //通过className配置需要扫描的文件夹路径，获取所有文件名称
         PathReader pathReader = new PathReader();
         List<String> fileNames = pathReader.pathToFileName(className);
+
         //通过文件名称，获取所有json数据
         ReadFileUtil readFileUtil = new ReadFileUtil();
-        for (String fileName : fileNames) {
-            //拿到Json后，发送到消息队列
-            System.out.println(readFileUtil.getFilePath(fileName));
+        if (fileNames!=null&&!fileNames.isEmpty()) {
+            for (String fileName : fileNames) {
+                String filePath = readFileUtil.getFilePath(fileName);
+                //拿到Json后(不为空)，发送到消息队列
+                if (!filePath.isEmpty()) {
+                    //TODO: 记得换为推送消息队列数据
+                    System.out.println(filePath);
+                }
+
+            }
         }
+
 
 
     }

@@ -30,7 +30,7 @@ public class PathReader {
     public List<String> pathToFileName(String path) {
         try {
             // 扫描目录并返回文件名
-            List<String> fileNames = Files.walk(Paths.get(staticPathName))
+            List<String> fileNames = Files.walk(Paths.get(path))
                     .filter(Files::isRegularFile) // 只过滤文件
                     .map(Path::toAbsolutePath) // 获取文件的绝对路径
                     .map(Path::toString) // 转为字符串

@@ -11,5 +11,5 @@ import java.util.Map;
 public interface JustMapper {
 
     @Select("select * from user where id = #{id}")
-    public List<Map<String,Object>> getUserById(Integer id);
+    List<Map<String,Object>> getUserById(Integer id);
 }
