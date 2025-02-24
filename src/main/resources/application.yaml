@@ -11,6 +11,13 @@ spring:
       port: 32330
       username: admin
       password: y14YowJOhRMyGCFY
-
+    servlet:
+      multipart:
+        enabled: true
+        max-file-size: 500MB
+        max-request-size: 600MB
+#配置个人参数
 zpx:
-  pic
+  picurl: "123"
+
+#去除tomcat上传文件大小限制

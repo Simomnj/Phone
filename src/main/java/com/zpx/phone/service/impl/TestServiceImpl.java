@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import static com.zpx.phone.controller.TestController.UPLOAD_DIR;
+
 @Service
 public class TestServiceImpl implements TestService {
 
