@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+//读取本地文件，执行操作
 @RestController("/file")
 public class FileController {
 

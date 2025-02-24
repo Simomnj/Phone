@@ -11,3 +11,6 @@ spring:
       port: 32330
       username: admin
       password: y14YowJOhRMyGCFY
+
+zpx:
+  pic
