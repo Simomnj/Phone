@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+//读取本地文件，执行操作
 @RestController("/file")
 public class FileController {
 
@@ -27,7 +28,12 @@ public class FileController {
     }
     @GetMapping("/readToMQ")
     public Result<Object> readToMQ(String className) {
-        justService.readToMQ(className);
+        String s = justService.readToMQ(className);
+        return Result.success(s);
+    }
+    @GetMapping("/sendToMQ")
+    public Result<Object> sendToMQ(String message) {
+        justService.sendToMQ(message);
         return Result.success();
     }
 }

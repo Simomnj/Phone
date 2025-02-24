@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class PathReader {
-    private static String staticPathName = "C:/Users/Zhangpengxiang/Desktop/Code/Json/工厂端";
+    private static String staticPathName = "C:/Users/Zhangpengxiang/Desktop/Code/Json/工厂端/压力测试";
     //测试
     public static void main(String[] args) {
         try {

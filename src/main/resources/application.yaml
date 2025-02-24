@@ -9,5 +9,8 @@ spring:
     rabbitmq:
       host: 192.168.1.53
       port: 32330
-      username: mq_admi_10187
-      password: factory_29640
+      username: admin
+      password: y14YowJOhRMyGCFY
+
+zpx:
+  pic
