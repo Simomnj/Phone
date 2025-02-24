@@ -27,7 +27,12 @@ public class FileController {
     }
     @GetMapping("/readToMQ")
     public Result<Object> readToMQ(String className) {
-        justService.readToMQ(className);
+        String s = justService.readToMQ(className);
+        return Result.success(s);
+    }
+    @GetMapping("/sendToMQ")
+    public Result<Object> sendToMQ(String message) {
+        justService.sendToMQ(message);
         return Result.success();
     }
 }

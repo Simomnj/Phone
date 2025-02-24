@@ -9,5 +9,7 @@ public interface JustService {
 
     public List<Map<String, Object>> getUserInfo(Integer id);
 
-    void readToMQ(String className);
+    String readToMQ(String className);
+
+    void sendToMQ(String message);
 }

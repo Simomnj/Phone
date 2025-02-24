@@ -6,6 +6,7 @@ import com.zpx.phone.pojo.UserLogin;
 import com.zpx.phone.service.JustService;
 import com.zpx.phone.utils.PathReader;
 import com.zpx.phone.utils.ReadFileUtil;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public class JustServiceImpl implements JustService {
 
     @Autowired
     private JustMapper justMapper;
+    @Autowired
+    private AmqpTemplate amqpTemplate;
+
 
     @Override
     public List<Map<String, Object>> getUserInfo(Integer id) {
@@ -25,7 +29,7 @@ public class JustServiceImpl implements JustService {
     }
 
     @Override
-    public void readToMQ(String className) {
+    public String readToMQ(String className) {
 
         //通过className配置需要扫描的文件夹路径，获取所有文件名称
         PathReader pathReader = new PathReader();
@@ -34,9 +38,15 @@ public class JustServiceImpl implements JustService {
         ReadFileUtil readFileUtil = new ReadFileUtil();
         for (String fileName : fileNames) {
             //拿到Json后，发送到消息队列
-            System.out.println(readFileUtil.getFilePath(fileName));
+            String string = readFileUtil.getFilePath(fileName);
+            amqpTemplate.convertAndSend("intelligent.platform.set.of.pictures.exchange", "10187", string);
         }
 
+        return "共发送"+fileNames.size()+"条数据";
+    }
 
+    @Override
+    public void sendToMQ(String message) {
+        amqpTemplate.convertAndSend("intelligent.platform.set.of.pictures.exchange", "10187", message);
     }
 }

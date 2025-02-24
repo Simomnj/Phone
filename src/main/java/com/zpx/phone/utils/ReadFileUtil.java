@@ -26,7 +26,6 @@ public class ReadFileUtil {
         try {
             // 读取JSON文件并转换为String
             String jsonString = new String(Files.readString(new File(fileName).toPath()));
-            System.out.println(jsonString);
             return jsonString;
         } catch (
                 IOException e) {
