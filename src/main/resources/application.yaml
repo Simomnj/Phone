@@ -11,6 +11,7 @@ spring:
       port: 32330
       username: admin
       password: y14YowJOhRMyGCFY
+    #去除tomcat上传文件大小限制
     servlet:
       multipart:
         enabled: true
@@ -19,5 +20,3 @@ spring:
 #配置个人参数
 zpx:
   picurl: "123"
-
-#去除tomcat上传文件大小限制
